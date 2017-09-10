@@ -1,4 +1,4 @@
-package com.damuzhi.domin;
+package com.nzxs2.domin;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

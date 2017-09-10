@@ -1,11 +1,9 @@
-package com.damuzhi.controller;
+package com.nzxs2.controller;
 
-import com.damuzhi.domin.Resources;
-import com.damuzhi.service.ResourcesService;
-import org.mybatis.spring.annotation.MapperScan;
+import com.nzxs2.domin.Resources;
+import com.nzxs2.service.ResourcesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +16,7 @@ import java.util.List;
  * @create 2017-07-03 13:58
  */
 
-@RestController
+@Controller
 public class LoginController {
 
     @Autowired
@@ -32,7 +30,7 @@ public class LoginController {
 
     @RequestMapping(value = "/index")
     public String index(Model model) {
-        model.addAttribute("sb", "this is my fries测试不");
+        model.addAttribute("name", "this is my fries测试不");
         return "index";
     }
 

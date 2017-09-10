@@ -1,16 +1,12 @@
-package com.damuzhi.service.impl;
+package com.nzxs2.service.impl;
 
-import com.damuzhi.dao.ResourcesDao;
-import com.damuzhi.domin.Resources;
-import com.damuzhi.service.ResourcesService;
+import com.nzxs2.dao.ResourcesDao;
+import com.nzxs2.domin.Resources;
+import com.nzxs2.service.ResourcesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
 
-import javax.annotation.Resource;
 import java.util.List;
-import java.util.Map;
 
 
 @Service("resourcesService")

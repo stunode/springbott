@@ -1,10 +1,9 @@
-package com.damuzhi.service;
+package com.nzxs2.service;
 
 
-import com.damuzhi.domin.Resources;
+import com.nzxs2.domin.Resources;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by yangqj on 2017/4/25.

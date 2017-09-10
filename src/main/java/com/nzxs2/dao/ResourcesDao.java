@@ -1,6 +1,6 @@
-package com.damuzhi.dao;
+package com.nzxs2.dao;
 
-import com.damuzhi.domin.Resources;
+import com.nzxs2.domin.Resources;
 
 import java.util.List;
 import java.util.Map;
