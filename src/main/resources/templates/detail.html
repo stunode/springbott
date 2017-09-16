@@ -1,0 +1,11 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p th:text="'足控文, ' + ${articleDetails.title} + '!'"/>
+<!--<p th:text="${articleDetails.articleText}"/>-->
+<td th:text="${articleDetails.articleText}">null</td>
+</body>
+</html>

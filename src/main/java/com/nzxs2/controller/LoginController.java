@@ -1,5 +1,8 @@
 package com.nzxs2.controller;
 
+import com.nzxs2.dao.ArticleDao;
+import com.nzxs2.dao.ArticleInfoDao;
+import com.nzxs2.domin.ArticleInfo;
 import com.nzxs2.domin.Resources;
 import com.nzxs2.service.ResourcesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,8 @@ public class LoginController {
 
     @Autowired
     private ResourcesService resourcesService;
+    @Autowired
+    private ArticleInfoDao articleInfoDao;
 
     @RequestMapping("/")
     public String index() {
@@ -30,14 +35,12 @@ public class LoginController {
 
     @RequestMapping(value = "/index")
     public String index(Model model) {
-        model.addAttribute("name", "this is my fries测试不");
+        model.addAttribute("name", "足控文");
+        List<ArticleInfo> articleInfos = articleInfoDao.selectArticleInfos();
+        model.addAttribute("articles", articleInfos);
         return "index";
     }
 
-    @RequestMapping(value = "/api/city", method = RequestMethod.GET)
-    public List<Resources> findOneCity() {
-        return resourcesService.queryAll();
-    }
 
     @RequestMapping("/login")
     public String login() {

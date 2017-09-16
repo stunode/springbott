@@ -1,9 +1,25 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
 <p th:text="'Hello, ' + ${name} + '!'"/>
+
+<table class="table table-hover" style="border-collapse: 0"
+       width="50%">
+    <thead>
+    <tr>
+        <th>喜欢就收藏吧</th>
+    </tr>
+    </thead>
+    <tr th:each="article : ${articles}">
+        <td th:text="${article.title}"></td>
+        <td>
+            <a th:href="@{/article/details(articleId=${article.id})}">view</a>
+        </td>
+    </tr>
+
+</table>
 </body>
 </html>
