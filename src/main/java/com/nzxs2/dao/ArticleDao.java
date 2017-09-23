@@ -2,6 +2,7 @@ package com.nzxs2.dao;
 
 import com.nzxs2.domin.Article;
 import org.apache.ibatis.annotations.*;
+import org.springframework.cache.annotation.CacheConfig;
 
 import java.util.List;
 

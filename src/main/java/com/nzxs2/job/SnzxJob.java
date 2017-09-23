@@ -1,5 +1,6 @@
 package com.nzxs2.job;
 
+import com.nzxs2.constant.CacheConstant;
 import com.nzxs2.dao.ArticleDao;
 import com.nzxs2.dao.PageDao;
 import com.nzxs2.domin.Article;
@@ -10,6 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -33,7 +36,7 @@ public class SnzxJob {
     @Autowired
     private PageDao pageDao;
 
-    @Scheduled(cron = "0 45 */1  * * * ")
+    @Scheduled(cron = "0 05 */1  * * * ")
     public void crawlerArticleUrl() {
 
         logger.info("==========爬去url任务启动============");
@@ -51,7 +54,7 @@ public class SnzxJob {
         logger.info("==========爬去url任务结束============");
     }
 
-    @Scheduled(cron = "0 0 */1 * * * ")
+    @Scheduled(cron = "0 05 */1 * * * ")
     public void crawlerArticleInfo() {
 
         logger.info("==========爬去文章info任务启动============");
@@ -62,11 +65,13 @@ public class SnzxJob {
             crawlerService.insertArticleInfo(articleInfo);
             articleDao.updateStatus(articleInfo.getArticleId());
             try {
-                Thread.sleep(60000);
+                Thread.sleep(20000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         logger.info("==========爬去文章info任务结束============");
     }
+
+
 }
