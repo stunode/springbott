@@ -27,9 +27,8 @@
     </tr>
     </thead>
     <tr th:each="article : ${articleInfos}">
-        <td th:text="${article.title}"></td>
         <td>
-            <a th:href="@{/article/details(articleId=${article.id})}">阅读</a>
+            <a th:text="${article.title}" th:href="@{/article/details(articleId=${article.id})}"></a>
         </td>
     </tr>
 

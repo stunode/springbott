@@ -51,4 +51,14 @@ public class Article {
     public void setUrl(String url) {
         this.url = url == null ? null : url.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", url='" + url + '\'' +
+                ", status=" + status +
+                '}';
+    }
 }

@@ -2,8 +2,8 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
-    <link th:href="@{/bootstrap-table.css}" rel="stylesheet" />
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet"/>
+    <link th:href="@{/bootstrap-table.css}" rel="stylesheet"/>
     <script th:src="@{/jquery.min.js}"></script>
     <script th:src="@{/js/bootstrap.min.js}"></script>
     <script th:src="@{/bootstrap-table.js}"></script>
@@ -16,12 +16,11 @@
 </li>
 
 <div class="input-group col-md-3" style="margin-top:0px positon:relative">
-    <input id="queryParam" type="text" class="form-control" placeholder="请输入字段名" />
+    <input id="queryParam" type="text" class="form-control" placeholder="请输入字段名"/>
             <span class="input-group-btn">
                <button class="btn btn-info btn-search" id="esQuery">查找</button>
             </span>
 </div>
-
 
 
 <table id="table"></table>
@@ -29,24 +28,21 @@
 <script>
     $('#table').bootstrapTable({
         url: '/article/getArticleListByPage',
-        method:'POST',
-        dataType:'json',
+        method: 'POST',
+        dataType: 'json',
 //        contentType: "application/x-www-form-urlencoded",
-        queryParams : queryParams,
+        queryParams: queryParams,
 //        sidePagination: "server",
         height: $(window).height() - 110,
-        width:$(window).width(),
-        showColumns:true,
-        pagination:true,
+        width: $(window).width(),
+        showColumns: true,
+        pagination: true,
         columns: [{
             field: 'title',
-            title: 'title'
-        },{
-            title: '操作',
-            field: 'id',
-            align: 'center',
-            formatter:function(value,row,index){
-                var e = '<a href="#" mce_href="#" onclick="edit(\''+ row.id + '\')">阅读</a> ';
+            title: 'title',
+            align: 'left',
+            formatter: function (value, row, index) {
+                var e = '<a href="#" mce_href="#" onclick="edit(\'' + row.id + '\')">' + row.title + '</a> ';
                 return e;
             }
         },
@@ -55,7 +51,7 @@
 
     function queryParams(params) {
         var param = {
-            pageNumber : 1,
+            pageNumber: 1,
         }
         return param;
     }
@@ -63,7 +59,7 @@
         location.href = "/article/details?articleId=" + articleId;
     }
 
-    $('#esQuery').on("click",function(){
+    $('#esQuery').on("click", function () {
         location.href = "/esArticleInfoQuery?queryParam=" + $('#queryParam').val();
     })
 </script>
