@@ -1,6 +1,5 @@
 package com.nzxs2.job;
 
-import com.nzxs2.constant.CacheConstant;
 import com.nzxs2.dao.ArticleDao;
 import com.nzxs2.dao.PageDao;
 import com.nzxs2.domin.Article;
@@ -11,9 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
